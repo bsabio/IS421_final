@@ -56,6 +56,12 @@ export default function Home() {
           </span>
           <nav className="flex items-center gap-6 text-sm">
             <a
+              href="/cockpit"
+              className="vintage-link"
+            >
+              Cockpit
+            </a>
+            <a
               href="https://www.linkedin.com/in/brandon-sabio-68a098232/"
               target="_blank"
               rel="noopener noreferrer"
