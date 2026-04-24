@@ -1,23 +1,59 @@
+
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #e2e8f0;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-fira-code);
-}
-
-.font-serif-display {
-  font-family: var(--font-source-serif), Georgia, serif;
+  --background: #f4f1ea;
+  --foreground: #2f2a22;
+  --line: #8d8578;
+  --panel: #f7f4ed;
+  --accent: #c97d48;
+  --accent-hover: #b66a34;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-fira-code), monospace;
+  font-family: var(--font-ibm-plex-serif), serif;
+  position: relative;
+}
+
+.vintage-link {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.vintage-link:hover {
+  color: #1f1b14;
+}
+
+.section-divider {
+  border-top: 3px double var(--line);
+  border-bottom: 3px double var(--line);
+}
+
+.memo-box {
+  border: 3px double var(--line);
+  background: var(--panel);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+}
+
+.memo-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5a5144;
+}
+
+.vintage-button {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  transition: background-color 0.2s;
+}
+
+.vintage-button:hover {
+  background: var(--accent-hover);
 }

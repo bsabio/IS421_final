@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Fira_Code, Inter, Source_Serif_4 } from "next/font/google";
+import { IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const firaCode = Fira_Code({
-  variable: "--font-fira-code",
-  subsets: ["latin"],
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const ibmPlexSerif = IBM_Plex_Serif({
+  variable: "--font-ibm-plex-serif",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -29,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${firaCode.variable} ${sourceSerif.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${ibmPlexSerif.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
