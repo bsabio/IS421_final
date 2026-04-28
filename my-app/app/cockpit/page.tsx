@@ -63,12 +63,12 @@ export default function CockpitPage() {
 
   return (
     <div className="min-h-screen relative z-0">
-      <header className="section-divider bg-[#f4f1ea] sticky top-0 z-20">
+      <header className="section-divider nav-bar sticky top-0 z-20">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-10">
           <Link href="/" className="vintage-link text-sm">
             Return to Portfolio
           </Link>
-          <span className="text-xs uppercase tracking-[0.22em] text-[#5a5144]">
+          <span className="text-xs uppercase tracking-[0.22em] text-[#a25a2b]">
             AI OPERATING COCKPIT
           </span>
         </div>
@@ -76,6 +76,7 @@ export default function CockpitPage() {
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-24 md:px-10 md:pb-36 relative z-10">
         <section className="section-divider py-10 md:py-12 px-2 md:px-4 mt-8">
+          <div className="accent-rule mb-4"></div>
           <div className="grid gap-3 text-xs uppercase tracking-[0.18em] text-[#5a5144] md:grid-cols-3">
             <p>SYSTEM: OPERATIONAL</p>
             <p>VERSION: 1.0.4</p>
@@ -84,6 +85,7 @@ export default function CockpitPage() {
         </section>
 
         <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
+          <div className="accent-rule mb-6"></div>
           <div className="grid gap-8 md:grid-cols-[320px_minmax(0,1fr)]">
             <aside className="memo-box">
               <h2 className="memo-label mb-4">Knowledge Corpus (_corpus)</h2>
@@ -128,6 +130,7 @@ export default function CockpitPage() {
         </section>
 
         <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
+          <div className="accent-rule mb-6"></div>
           <h2 className="memo-label mb-6">The Console</h2>
           <div className="memo-box">
             <div className="space-y-2 text-sm text-[#3d372e]">

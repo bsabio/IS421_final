@@ -49,9 +49,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative z-0">
-      <header className="section-divider bg-[#f4f1ea] sticky top-0 z-20">
+      <header className="section-divider nav-bar sticky top-0 z-20">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-10">
-          <span className="text-xs uppercase tracking-[0.22em] text-[#5a5144]">
+          <span className="text-xs uppercase tracking-[0.22em] text-[#a25a2b]">
             SYSTEMS PORTFOLIO
           </span>
           <nav className="flex items-center gap-6 text-sm">
@@ -83,6 +83,7 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-24 md:px-10 md:pb-36 relative z-10">
         <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
+          <div className="accent-rule mb-6"></div>
           <p className="memo-label">
             SYSTEM SUMMARY
           </p>
@@ -96,6 +97,7 @@ export default function Home() {
 
         <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
           <div className="mb-12 md:mb-16">
+            <div className="accent-rule mb-6"></div>
             <p className="memo-label">
               TECHNICAL MEMORANDUMS
             </p>
@@ -138,6 +140,7 @@ export default function Home() {
 
         <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
           <div className="mb-12 md:mb-16">
+            <div className="accent-rule mb-6"></div>
             <p className="memo-label">
               WORKFLOW FRAMEWORK
             </p>

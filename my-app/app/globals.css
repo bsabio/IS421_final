@@ -2,16 +2,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f1ea;
+  --background: #f7ede0;
   --foreground: #2f2a22;
-  --line: #8d8578;
-  --panel: #f7f4ed;
-  --accent: #c97d48;
-  --accent-hover: #b66a34;
+  --line: #c57c3f;
+  --panel: #fbefe2;
+  --accent: #e07a37;
+  --accent-hover: #c96526;
 }
 
 body {
   background-color: var(--background);
+  background-image:
+    radial-gradient(circle at top, rgba(224, 122, 55, 0.16), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(224, 122, 55, 0.08), transparent 40%);
   color: var(--foreground);
   font-family: var(--font-ibm-plex-serif), serif;
   position: relative;
@@ -26,7 +29,11 @@ body {
 }
 
 .vintage-link:hover {
-  color: #1f1b14;
+  color: var(--accent);
+}
+
+.nav-bar {
+  background-color: var(--background);
 }
 
 .section-divider {
@@ -39,13 +46,18 @@ body {
   background: var(--panel);
   padding: 1.75rem 1.5rem;
   position: relative;
+  box-shadow: 0 0 0 1px rgba(224, 122, 55, 0.08);
 }
 
 .memo-label {
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #5a5144;
+  color: #a25a2b;
+}
+
+.accent-rule {
+  border-top: 2px solid rgba(224, 122, 55, 0.4);
 }
 
 .vintage-button {
