@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
+import CockpitFab from "./components/CockpitFab";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm-plex-serif",
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${ibmPlexSerif.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <CockpitFab />
+      </body>
     </html>
   );
 }

@@ -28,6 +28,22 @@ export async function POST(req: Request) {
 
     const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
+    const projectContext = [
+      "You are answering questions about Brandon Sabio's project portfolio.",
+      "Contact links:",
+      "- Email: bsabio@njit.edu",
+      "- GitHub: https://github.com/bsabio",
+      "- LinkedIn: https://linkedin.com/in/bsabio",
+      "Projects:",
+      "- Secure-Gate: Auth anomaly detection with high-assurance safeguards for identity risk scoring and threat escalation. Proof systems include control-plane signals, policy test harnesses, and forensic audit trails. Repo: https://github.com/bsabio/secure_gate",
+      "- Plumber: MCP tooling and automation-focused orchestration for tickets, appointments, and service flows. Automation includes workflow routing with agent-run tooling and structured data handoffs. Repo: https://github.com/bsabio/plumber",
+      "- AI Publication: Research synthesis focused on high-impact briefs for agentic research and enterprise adoption signals. Repo: https://github.com/bsabio/IS421_prototype",
+      "- Calculator: Relational foundations covering schema design, query discipline, and structural data integrity. Repo: https://github.com/bsabio",
+      "If the question is ambiguous, ask a brief clarifying question about which project or area.",
+    ].join("\n");
+
+    const prompt = `${projectContext}\n\nUser question: ${question.trim()}`;
+
     const upstream = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
@@ -36,7 +52,7 @@ export async function POST(req: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: question.trim() }] }],
+          contents: [{ parts: [{ text: prompt }] }],
         }),
       },
     );

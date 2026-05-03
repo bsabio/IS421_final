@@ -1,170 +1,270 @@
 export default function Home() {
-  const memorandums = [
-    {
-      title: "Technical Memorandum 01: Secure-Gate",
-      classification: "Applied AI / Security",
-      outcome:
-        "Repository currently focuses on a core risk engine and an accompanying control-plane dashboard for secure operations.",
-      proof:
-        "TypeScript-first implementation with a dedicated control-plane module and Jest-based validation scaffolding.",
-      repository: "https://github.com/bsabio/secure_gate",
-    },
-    {
-      title: "Technical Memorandum 02: Plumber",
-      classification: "Infrastructure / Automation",
-      outcome:
-        "A full-stack MCP demo for a plumbing portal where an AI assistant manages tickets, appointments, users, and newsletter retrieval.",
-      proof:
-        "Next.js App Router, SQLite with Drizzle ORM, and MCP tools integrated with Gemini/OpenAI-compatible workflows.",
-      repository: "https://github.com/bsabio/plumber",
-    },
-    {
-      title: "Technical Memorandum 03: AI Newsletter Factory",
-      classification: "Full-Stack / Prototype",
-      outcome:
-        "An MVP newsletter generator that produces weekly startup funding, events, and accelerator briefings in a reporter-style format.",
-      proof:
-        "Plugin-oriented Python pipeline with collect/normalize/dedupe/rank/render stages, JSON schema contracts, citations, and deterministic templates.",
-      repository: "https://github.com/bsabio/IS421_prototype",
-    },
-  ];
-
-  const framework = [
-    {
-      title: "Rigorous Infrastructure",
-      description:
-        "Building systems that don't just work, but are validated via TypeScript and Automated Testing.",
-    },
-    {
-      title: "Orchestrated Intelligence",
-      description:
-        "Using tools like Plumber to pipe intelligence into existing business workflows.",
-    },
-    {
-      title: "Transparent Security",
-      description:
-        "Implementing explainable AI (XAI) layers to ensure every automated decision is auditable.",
-    },
-  ];
-
   return (
-    <div className="min-h-screen relative z-0">
-      <header className="section-divider nav-bar sticky top-0 z-20">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-10">
-          <span className="text-xs uppercase tracking-[0.22em] text-[#a25a2b]">
-            SYSTEMS PORTFOLIO
-          </span>
-          <nav className="flex items-center gap-6 text-sm">
+    <div className="min-h-screen bg-[#0f172a] text-white">
+      <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-12 md:px-10 md:pb-28">
+        <section className="border-b border-cyan-300/40 pb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
+            SYSTEM_ARCHITECT: BRANDON_SABIO
+          </p>
+          <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            I automate enterprise trust through agentic AI.
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg text-slate-200 md:text-xl">
+            Applied AI specialist designing governance-first systems where every workflow earns trust on first contact and holds up under audit.
+          </p>
+        </section>
+
+        <section className="border-b border-cyan-300/40 py-12">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+                5
+              </p>
+              <p className="mt-3 text-base text-slate-200">
+                automation systems carried from prototype to governance review
+              </p>
+            </div>
+            <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+                3X
+              </p>
+              <p className="mt-3 text-base text-slate-200">
+                faster policy validation via spec-driven development playbooks
+              </p>
+            </div>
+            <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+                40+
+              </p>
+              <p className="mt-3 text-base text-slate-200">
+                governance artifacts aligned across dashboards, docs, and controls
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-cyan-300/40 py-12">
+          <div className="grid gap-10 md:grid-cols-3">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
+                HOW I WORK
+              </p>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Trust-first systems, end to end.
+              </h2>
+            </div>
+            <div className="md:col-span-2 grid gap-6">
+              <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+                <h3 className="text-lg font-semibold">Earn trust before asking for attention.</h3>
+                <p className="mt-3 text-base text-slate-200">
+                  I lead with systems evidence, not hype, so stakeholders understand why a model is safe to deploy.
+                </p>
+              </div>
+              <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+                <h3 className="text-lg font-semibold">One workflow, one voice across every surface.</h3>
+                <p className="mt-3 text-base text-slate-200">
+                  The cockpit, the policy, and the UI speak the same governance language to keep decisions traceable.
+                </p>
+              </div>
+              <div className="border border-cyan-300/40 bg-[#1e293b] p-6">
+                <h3 className="text-lg font-semibold">Prove behavior, not just capability.</h3>
+                <p className="mt-3 text-base text-slate-200">
+                  MCP orchestration and vector-backed audits create a live trail of why systems respond the way they do.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-cyan-300/40 py-12">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
+                SELECTED PROJECTS
+              </p>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Systems that earn trust under pressure.
+              </h2>
+            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+              LIVE DIAGNOSTICS
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-8">
+            <article className="border border-amber-300/60 bg-[#1e293b] p-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-amber-200">
+                    SECURE-GATE
+                  </p>
+                  <h3 className="mt-3 text-2xl font-bold">Auth Anomaly Detection</h3>
+                </div>
+                <a
+                  href="https://github.com/bsabio/secure_gate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs uppercase tracking-[0.24em] text-amber-200/90 transition hover:text-amber-100"
+                >
+                  REPOSITORY →
+                </a>
+              </div>
+              <p className="mt-5 text-base text-slate-200">
+                High-assurance safeguards for identity risk scoring and threat escalation.
+              </p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="border border-amber-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-200">
+                    Outcome
+                  </p>
+                  <p className="mt-3 text-sm text-slate-200">
+                    Auth anomaly detection tuned for escalation workflows and governance review.
+                  </p>
+                </div>
+                <div className="border border-amber-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-200">
+                    Proof System
+                  </p>
+                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
+                    <li>CONTROL-PLANE SIGNALS</li>
+                    <li>POLICY TEST HARNESSES</li>
+                    <li>FORENSIC AUDIT TRAILS</li>
+                  </ul>
+                </div>
+              </div>
+              <a
+                href="/cockpit"
+                className="mt-6 inline-flex border border-amber-300/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.24em] text-amber-200 transition hover:bg-amber-300 hover:text-black"
+              >
+                LAUNCH_COCKPIT →
+              </a>
+            </article>
+
+            <article className="border border-emerald-300/60 bg-[#1e293b] p-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-emerald-200">
+                    PLUMBER
+                  </p>
+                  <h3 className="mt-3 text-2xl font-bold">MCP Tooling</h3>
+                </div>
+                <a
+                  href="https://github.com/bsabio/plumber"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs uppercase tracking-[0.24em] text-emerald-200/90 transition hover:text-emerald-100"
+                >
+                  REPOSITORY →
+                </a>
+              </div>
+              <p className="mt-5 text-base text-slate-200">
+                Automation-focused orchestration for tickets, appointments, and service flows.
+              </p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="border border-emerald-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-200">
+                    Outcome
+                  </p>
+                  <p className="mt-3 text-sm text-slate-200">
+                    Modular tooling that routes tasks across MCP agents and operator handoffs.
+                  </p>
+                </div>
+                <div className="border border-emerald-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-200">
+                    Proof System
+                  </p>
+                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
+                    <li>MCP TOOL CHAINS</li>
+                    <li>STRUCTURED DATA HANDOFFS</li>
+                    <li>WORKFLOW OBSERVABILITY</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article className="border border-violet-300/60 bg-[#1e293b] p-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-violet-200">
+                    AI PUBLICATION
+                  </p>
+                  <h3 className="mt-3 text-2xl font-bold">Research Synthesis</h3>
+                </div>
+                <a
+                  href="https://github.com/bsabio/IS421_prototype"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs uppercase tracking-[0.24em] text-violet-200/90 transition hover:text-violet-100"
+                >
+                  REPOSITORY →
+                </a>
+              </div>
+              <p className="mt-5 text-base text-slate-200">
+                High-impact briefs on agentic research and enterprise adoption signals.
+              </p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div className="border border-violet-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-violet-200">
+                    Outcome
+                  </p>
+                  <p className="mt-3 text-sm text-slate-200">
+                    Technical research synthesis tailored for enterprise decision-makers.
+                  </p>
+                </div>
+                <div className="border border-violet-300/40 bg-[#111827] p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-violet-200">
+                    Proof System
+                  </p>
+                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
+                    <li>RESEARCH LINEAGE</li>
+                    <li>INDUSTRY SCANS</li>
+                    <li>ORCHESTRATED EDITION</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="pt-12">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
+                CONNECT
+              </p>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Teams building agentic systems that need trust-first delivery.
+              </h2>
+            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+              OPEN TO COLLABORATION
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 border border-cyan-300/40 bg-[#1e293b] p-6 font-mono text-xl uppercase tracking-[0.22em] text-white md:grid-cols-3 md:text-2xl">
             <a
-              href="/cockpit"
-              className="vintage-link"
+              href="mailto:bsabio@njit.edu"
+              className="transition hover:text-cyan-200"
             >
-              Cockpit
-            </a>
-            <a
-              href="https://www.linkedin.com/in/brandon-sabio-68a098232/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="vintage-link"
-            >
-              LinkedIn
+              EMAIL
             </a>
             <a
               href="https://github.com/bsabio"
               target="_blank"
               rel="noopener noreferrer"
-              className="vintage-link"
+              className="transition hover:text-cyan-200"
             >
-              GitHub
+              GITHUB
             </a>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto w-full max-w-6xl px-6 pb-24 md:px-10 md:pb-36 relative z-10">
-        <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
-          <div className="accent-rule mb-6"></div>
-          <p className="memo-label">
-            SYSTEM SUMMARY
-          </p>
-          <h1 className="mt-6 max-w-5xl text-4xl leading-tight md:text-6xl lg:text-7xl text-[#2f2a22]">
-            I automate complex enterprise workflows with agentic AI that earns trust through rigorous testing.
-          </h1>
-          <p className="mt-8 max-w-4xl text-lg leading-8 text-[#3d372e]">
-            Third-year Web Information Systems student at NJIT. Currently building Secure-Gate and Plumber to bridge the gap between raw LLM capabilities and production-ready infrastructure.
-          </p>
-        </section>
-
-        <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
-          <div className="mb-12 md:mb-16">
-            <div className="accent-rule mb-6"></div>
-            <p className="memo-label">
-              TECHNICAL MEMORANDUMS
-            </p>
-            <h2 className="mt-6 text-3xl md:text-5xl text-[#2f2a22]">
-              Featured Projects
-            </h2>
-          </div>
-
-          <div className="space-y-8 md:space-y-10">
-            {memorandums.map((project) => (
-              <div key={project.title}>
-                <div className="memo-box">
-                  <p className="memo-label mb-3">
-                    {project.classification}
-                  </p>
-                  <h3 className="text-2xl md:text-4xl mb-4 text-[#2f2a22]">
-                    {project.title}
-                  </h3>
-                  <div className="grid gap-2">
-                    <div className="text-sm text-[#3d372e]">
-                      <span className="font-semibold">Outcome:</span> {project.outcome}
-                    </div>
-                    <div className="text-sm text-[#3d372e]">
-                      <span className="font-semibold">Proof System:</span> {project.proof}
-                    </div>
-                    <a
-                      href={project.repository}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="vintage-link text-sm"
-                    >
-                      Repository
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <a
+              href="https://linkedin.com/in/bsabio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-cyan-200"
+            >
+              LINKEDIN
+            </a>
           </div>
         </section>
-
-        <section className="section-divider py-16 md:py-24 px-2 md:px-4 mt-8">
-          <div className="mb-12 md:mb-16">
-            <div className="accent-rule mb-6"></div>
-            <p className="memo-label">
-              WORKFLOW FRAMEWORK
-            </p>
-            <h2 className="mt-6 text-3xl md:text-5xl text-[#2f2a22]">
-              How I Work
-            </h2>
-          </div>
-          <div className="grid gap-10 md:grid-cols-3">
-            {framework.map((item) => (
-              <div key={item.title} className="memo-box">
-                <h3 className="text-xl md:text-2xl mb-2 text-[#2f2a22]">
-                  {item.title}
-                </h3>
-                <p className="text-base text-[#3d372e]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <footer className="section-divider mt-10 py-6 text-center text-xs text-[#5a5144]">
-          Built with Next.js, TypeScript, and Tailwind CSS.
-        </footer>
       </main>
     </div>
   );
