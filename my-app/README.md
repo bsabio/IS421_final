@@ -4,7 +4,7 @@ This repo presents a spec-driven Systems Portfolio focused on agentic AI workflo
 
 ## Knowledge Architecture
 
-The project is organized around a knowledge-first structure. The intended knowledge layers are:
+The repo uses a knowledge-first structure at the repository root:
 
 - docs/ for long-form design notes, system specs, and implementation decisions.
 - _corpus/ for reference inputs that inform the agent behavior.
@@ -16,7 +16,11 @@ Built with Next.js and TypeScript to provide the type-safe foundation required f
 
 ## Proof of Rigor
 
-Automated quality checks live in the tests/ directory and in .github/workflows (when present). These artifacts show that the plumbing is reinforced with repeatable validation.
+A tests/ directory is provided for future automated checks. Add a test runner of your choice (Vitest, Jest, Playwright) and wire it to `npm run test`.
+
+## Environment Variables
+
+Copy `.env.example` to `.env.local` and fill in any required values.
 
 ## Getting Started
 

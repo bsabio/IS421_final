@@ -1,6 +1,18 @@
+import Link from "next/link";
+import EvidenceStrip from "./components/EvidenceStrip";
+import ProcessTimeline from "./components/ProcessTimeline";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0f172a] text-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -top-32 left-1/2 h-80 w-[40rem] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="absolute right-10 top-20 h-48 w-48 rounded-full border border-cyan-300/20" />
+        <div className="absolute bottom-20 left-10 h-32 w-32 rounded-full border border-cyan-300/20" />
+      </div>
       <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-12 md:px-10 md:pb-28">
         <section className="border-b border-cyan-300/40 pb-12">
           <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
@@ -12,6 +24,9 @@ export default function Home() {
           <p className="mt-6 max-w-3xl text-lg text-slate-200 md:text-xl">
             Applied AI specialist designing governance-first systems where every workflow earns trust on first contact and holds up under audit.
           </p>
+          <div className="mt-8">
+            <EvidenceStrip />
+          </div>
         </section>
 
         <section className="border-b border-cyan-300/40 py-12">
@@ -80,149 +95,41 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
-                SELECTED PROJECTS
+                BENTO DASHBOARD
+              </p>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Workflow telemetry in one view.
+              </h2>
+            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+              ACTIVE STAGE: VALIDATE
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <ProcessTimeline />
+          </div>
+        </section>
+
+        <section className="border-b border-cyan-300/40 py-12">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.32em] text-cyan-200">
+                PROJECTS
               </p>
               <h2 className="mt-4 text-3xl font-bold md:text-4xl">
                 Systems that earn trust under pressure.
               </h2>
+              <p className="mt-4 max-w-2xl text-base text-slate-200">
+                See the full project catalog, impact statements, and repository links.
+              </p>
             </div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
-              LIVE DIAGNOSTICS
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-8">
-            <article className="border border-amber-300/60 bg-[#1e293b] p-6">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-amber-200">
-                    SECURE-GATE
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold">Auth Anomaly Detection</h3>
-                </div>
-                <a
-                  href="https://github.com/bsabio/secure_gate"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-xs uppercase tracking-[0.24em] text-amber-200/90 transition hover:text-amber-100"
-                >
-                  REPOSITORY →
-                </a>
-              </div>
-              <p className="mt-5 text-base text-slate-200">
-                High-assurance safeguards for identity risk scoring and threat escalation.
-              </p>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                <div className="border border-amber-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-200">
-                    Outcome
-                  </p>
-                  <p className="mt-3 text-sm text-slate-200">
-                    Auth anomaly detection tuned for escalation workflows and governance review.
-                  </p>
-                </div>
-                <div className="border border-amber-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-200">
-                    Proof System
-                  </p>
-                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
-                    <li>CONTROL-PLANE SIGNALS</li>
-                    <li>POLICY TEST HARNESSES</li>
-                    <li>FORENSIC AUDIT TRAILS</li>
-                  </ul>
-                </div>
-              </div>
-              <a
-                href="/cockpit"
-                className="mt-6 inline-flex border border-amber-300/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.24em] text-amber-200 transition hover:bg-amber-300 hover:text-black"
-              >
-                LAUNCH_COCKPIT →
-              </a>
-            </article>
-
-            <article className="border border-emerald-300/60 bg-[#1e293b] p-6">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-emerald-200">
-                    PLUMBER
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold">MCP Tooling</h3>
-                </div>
-                <a
-                  href="https://github.com/bsabio/plumber"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-xs uppercase tracking-[0.24em] text-emerald-200/90 transition hover:text-emerald-100"
-                >
-                  REPOSITORY →
-                </a>
-              </div>
-              <p className="mt-5 text-base text-slate-200">
-                Automation-focused orchestration for tickets, appointments, and service flows.
-              </p>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                <div className="border border-emerald-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-200">
-                    Outcome
-                  </p>
-                  <p className="mt-3 text-sm text-slate-200">
-                    Modular tooling that routes tasks across MCP agents and operator handoffs.
-                  </p>
-                </div>
-                <div className="border border-emerald-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-200">
-                    Proof System
-                  </p>
-                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
-                    <li>MCP TOOL CHAINS</li>
-                    <li>STRUCTURED DATA HANDOFFS</li>
-                    <li>WORKFLOW OBSERVABILITY</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <article className="border border-violet-300/60 bg-[#1e293b] p-6">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-violet-200">
-                    AI PUBLICATION
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold">Research Synthesis</h3>
-                </div>
-                <a
-                  href="https://github.com/bsabio/IS421_prototype"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-xs uppercase tracking-[0.24em] text-violet-200/90 transition hover:text-violet-100"
-                >
-                  REPOSITORY →
-                </a>
-              </div>
-              <p className="mt-5 text-base text-slate-200">
-                High-impact briefs on agentic research and enterprise adoption signals.
-              </p>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                <div className="border border-violet-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-violet-200">
-                    Outcome
-                  </p>
-                  <p className="mt-3 text-sm text-slate-200">
-                    Technical research synthesis tailored for enterprise decision-makers.
-                  </p>
-                </div>
-                <div className="border border-violet-300/40 bg-[#111827] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.28em] text-violet-200">
-                    Proof System
-                  </p>
-                  <ul className="mt-3 space-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-200">
-                    <li>RESEARCH LINEAGE</li>
-                    <li>INDUSTRY SCANS</li>
-                    <li>ORCHESTRATED EDITION</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
+            <Link
+              href="/projects"
+              className="inline-flex border border-cyan-300/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.24em] text-cyan-100 transition hover:bg-cyan-300 hover:text-black"
+            >
+              VIEW_PROJECTS →
+            </Link>
           </div>
         </section>
 
