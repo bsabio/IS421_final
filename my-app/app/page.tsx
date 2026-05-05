@@ -160,7 +160,7 @@ export default function Home() {
               GITHUB
             </a>
             <a
-              href="https://linkedin.com/in/bsabio"
+              href="https://www.linkedin.com/in/brandon-sabio-68a098232/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-cyan-200"
