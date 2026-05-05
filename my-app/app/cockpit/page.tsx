@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function CockpitPage() {
@@ -8,6 +8,16 @@ export default function CockpitPage() {
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [apiKey, setApiKey] = useState("");
+  const [apiKeySaved, setApiKeySaved] = useState(false);
+
+  useEffect(() => {
+    const savedKey = localStorage.getItem("geminiApiKey");
+    if (savedKey) {
+      setApiKey(savedKey);
+      setApiKeySaved(true);
+    }
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,6 +50,17 @@ export default function CockpitPage() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function handleSaveKey() {
+    const trimmedKey = apiKey.trim();
+    if (!trimmedKey) {
+      setError("Enter an API key first.");
+      return;
+    }
+
+    localStorage.setItem("geminiApiKey", trimmedKey);
+    setApiKeySaved(true);
   }
 
   return (
@@ -121,6 +142,52 @@ export default function CockpitPage() {
               ) : (
                 <p className="mt-3 text-sm text-slate-400">No response yet.</p>
               )}
+            </div>
+          </section>
+
+          <section className="relative col-span-1 border border-cyan-300/60 bg-[#1e293b] p-8 md:col-span-4">
+            <span className="absolute right-5 top-5 font-mono text-sm text-cyan-200">
+              SYSTEM_ID 04
+            </span>
+            <p className="font-mono text-sm uppercase tracking-[0.3em] text-cyan-200">
+              API ACCESS
+            </p>
+            <p className="mt-4 max-w-2xl text-base text-slate-200">
+              Add your Gemini API key to use personal access on this device only. The key is stored in local storage.
+            </p>
+
+            <div className="mt-6">
+              <label
+                htmlFor="gemini-key"
+                className="font-mono text-sm uppercase tracking-[0.28em] text-cyan-200"
+              >
+                Gemini API Key
+              </label>
+              <input
+                id="gemini-key"
+                type="password"
+                placeholder="Paste your Gemini API key"
+                value={apiKey}
+                onChange={(event) => {
+                  setApiKey(event.target.value);
+                  setApiKeySaved(false);
+                }}
+                className="mt-3 w-full border border-cyan-300/60 bg-[#0f172a] px-4 py-3 text-sm text-white outline-none focus:border-cyan-200"
+              />
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={handleSaveKey}
+                  className="inline-flex border border-cyan-300/60 px-5 py-3 font-mono text-sm uppercase tracking-[0.24em] text-cyan-100 transition hover:bg-cyan-300 hover:text-black"
+                >
+                  SAVE_KEY
+                </button>
+                {apiKeySaved ? (
+                  <span className="font-mono text-xs uppercase tracking-[0.24em] text-emerald-200">
+                    KEY_SAVED
+                  </span>
+                ) : null}
+              </div>
             </div>
           </section>
         </div>

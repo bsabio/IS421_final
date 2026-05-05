@@ -18,13 +18,19 @@ The current implementation is a single-page, App Router-based Next.js web applic
 ```text
 IS421_final/
 ├── LICENSE
+├── Makefile
 ├── README.md
+├── docs/
+├── _corpus/
+├── _references/
 └── my-app/
 	├── app/
 	│   ├── globals.css
 	│   ├── layout.tsx
 	│   └── page.tsx
 	├── public/
+	├── tests/
+	├── .env.example
 	├── package.json
 	├── tsconfig.json
 	├── next.config.ts
@@ -51,6 +57,17 @@ npm run dev
 ```
 
 Open `http://localhost:3000` in your browser.
+
+If you prefer repo-root commands, use:
+
+```bash
+make install
+make dev
+```
+
+## Environment Variables
+
+See `my-app/.env.example` for a template you can copy to `.env.local`.
 
 ## Available Scripts
 

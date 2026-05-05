@@ -8,6 +8,7 @@ const projects = [
     impact: "Built anomaly workflows aligned with governance review.",
     chips: ["RISK SCORING", "AUDIT TRAILS", "GOVERNANCE"],
     href: "https://github.com/bsabio/secure_gate",
+    demo: "https://secure-gate-4d3zakosm-brandons-projects-d6627d5f.vercel.app/",
     accent: "text-amber-200",
     border: "border-amber-300/60",
     chipBorder: "border-amber-300/40",
@@ -19,9 +20,22 @@ const projects = [
     impact: "Delivered modular tooling with traceable task routing.",
     chips: ["MCP", "ORCHESTRATION", "OBSERVABILITY"],
     href: "https://github.com/bsabio/plumber",
+    demo: "https://plumber-silk.vercel.app/",
     accent: "text-emerald-200",
     border: "border-emerald-300/60",
     chipBorder: "border-emerald-300/40",
+  },
+  {
+    label: "WORKFLOW MIDTERM",
+    title: "Workflow Midterm",
+    problem: "The workflow needed a clear, user-facing project narrative.",
+    impact: "Shipped a structured UI that documents the workflow end to end.",
+    chips: ["WORKFLOW", "UI", "DOCUMENTATION"],
+    href: "https://github.com/bsabio/midterm_IS322",
+    demo: "https://bsabio.github.io/midterm_IS322/index.html",
+    accent: "text-sky-200",
+    border: "border-sky-300/60",
+    chipBorder: "border-sky-300/40",
   },
   {
     label: "AI PUBLICATION",
@@ -100,14 +114,26 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mt-5 inline-flex font-mono text-xs uppercase tracking-[0.24em] ${project.accent}/90 transition hover:text-white`}
-              >
-                REPOSITORY →
-              </a>
+              <div className="mt-5 flex flex-wrap items-center gap-4">
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex font-mono text-xs uppercase tracking-[0.24em] ${project.accent}/90 transition hover:text-white`}
+                >
+                  REPOSITORY →
+                </a>
+                {project.demo ? (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex font-mono text-xs uppercase tracking-[0.24em] ${project.accent}/90 transition hover:text-white`}
+                  >
+                    LIVE DEMO →
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
