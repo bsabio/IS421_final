@@ -18,10 +18,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Question is required." }, { status: 400 });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const headerKey = req.headers.get("x-gemini-api-key")?.trim();
+    const apiKey = headerKey || process.env.GEMINI_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "GEMINI_API_KEY is not configured on the server." },
+        { error: "Gemini API key is missing. Provide it in the cockpit or configure GEMINI_API_KEY." },
         { status: 500 },
       );
     }

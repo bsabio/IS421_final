@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 export default function CockpitFab() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +8,16 @@ export default function CockpitFab() {
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [apiKey, setApiKey] = useState("");
+  const [apiKeySaved, setApiKeySaved] = useState(false);
+
+  useEffect(() => {
+    const savedKey = localStorage.getItem("geminiApiKey");
+    if (savedKey) {
+      setApiKey(savedKey);
+      setApiKeySaved(true);
+    }
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,6 +34,7 @@ export default function CockpitFab() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "x-gemini-api-key": apiKey.trim(),
         },
         body: JSON.stringify({ question }),
       });
@@ -40,6 +51,17 @@ export default function CockpitFab() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function handleSaveKey() {
+    const trimmedKey = apiKey.trim();
+    if (!trimmedKey) {
+      setError("Enter an API key first.");
+      return;
+    }
+
+    localStorage.setItem("geminiApiKey", trimmedKey);
+    setApiKeySaved(true);
   }
 
   return (
@@ -121,6 +143,46 @@ export default function CockpitFab() {
                     No response yet.
                   </p>
                 )}
+              </div>
+            </section>
+
+            <section className="mt-6 border border-cyan-300/60 bg-[#1e293b] p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-200">
+                API ACCESS
+              </p>
+              <p className="mt-3 text-sm text-slate-200">
+                Add your Gemini API key for this device only. It is stored in local storage.
+              </p>
+              <label
+                htmlFor="cockpit-gemini-key"
+                className="mt-4 block font-mono text-xs uppercase tracking-[0.28em] text-cyan-200"
+              >
+                Gemini API Key
+              </label>
+              <input
+                id="cockpit-gemini-key"
+                type="password"
+                placeholder="Paste your Gemini API key"
+                value={apiKey}
+                onChange={(event) => {
+                  setApiKey(event.target.value);
+                  setApiKeySaved(false);
+                }}
+                className="mt-3 w-full border border-cyan-300/60 bg-[#0f172a] px-4 py-3 text-sm text-white outline-none focus:border-cyan-200"
+              />
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onClick={handleSaveKey}
+                  className="inline-flex border border-cyan-300/60 px-5 py-3 font-mono text-xs uppercase tracking-[0.24em] text-cyan-100 transition hover:bg-cyan-300 hover:text-black"
+                >
+                  SAVE_KEY
+                </button>
+                {apiKeySaved ? (
+                  <span className="font-mono text-xs uppercase tracking-[0.24em] text-emerald-200">
+                    KEY_SAVED
+                  </span>
+                ) : null}
               </div>
             </section>
           </div>

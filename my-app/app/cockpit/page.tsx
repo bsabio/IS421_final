@@ -34,6 +34,7 @@ export default function CockpitPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "x-gemini-api-key": apiKey.trim(),
         },
         body: JSON.stringify({ question }),
       });
