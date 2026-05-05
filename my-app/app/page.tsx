@@ -1,5 +1,4 @@
 import Link from "next/link";
-import EvidenceStrip from "./components/EvidenceStrip";
 import ProcessTimeline from "./components/ProcessTimeline";
 
 export default function Home() {
@@ -24,9 +23,7 @@ export default function Home() {
           <p className="mt-6 max-w-3xl text-lg text-slate-200 md:text-xl">
             Applied AI specialist designing governance-first systems where every workflow earns trust on first contact and holds up under audit.
           </p>
-          <div className="mt-8">
-            <EvidenceStrip />
-          </div>
+
         </section>
 
         <section className="border-b border-cyan-300/40 py-12">
